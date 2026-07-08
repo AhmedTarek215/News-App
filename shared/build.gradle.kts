@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.androidMultiplatformLibrary)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.kotlinSerialization) // ADD THIS
     alias(libs.plugins.ksp)
     alias(libs.plugins.androidx.room)
 }
@@ -57,6 +58,7 @@ kotlin {
             implementation(libs.ktor.client.core)
             implementation(libs.ktor.client.content.negotiation)
             implementation(libs.ktor.serialization.kotlinx.json)
+            implementation(libs.ktor.client.logging)
 
             // --- Koin ---
             implementation(libs.koin.core)
@@ -70,6 +72,7 @@ kotlin {
             // --- Coil ---
             implementation(libs.coil.compose)
             implementation(libs.coil.network.ktor3)
+            implementation(libs.kotlinx.serialization.json)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

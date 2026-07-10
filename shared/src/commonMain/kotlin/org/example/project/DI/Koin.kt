@@ -1,10 +1,17 @@
 package org.example.project.di
 
+import org.koin.core.KoinApplication
 import org.koin.core.context.startKoin
 
-fun initKoin() {
+typealias KoinAppDeclaration = KoinApplication.() -> Unit
 
-    startKoin {
+fun initKoin(
+    appDeclaration: KoinAppDeclaration = {}
+): KoinApplication {
+
+    return startKoin {
+
+        appDeclaration()
 
         modules(appModules)
 

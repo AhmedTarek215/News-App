@@ -42,6 +42,7 @@ kotlin {
             implementation(libs.compose.uiToolingPreview)
             // Android-specific Ktor engine
             implementation(libs.ktor.client.okhttp)
+            implementation(libs.koin.android)
         }
         commonMain.dependencies {
             // --- Core Compose ---
@@ -68,6 +69,7 @@ kotlin {
             // --- Room ---
             implementation(libs.androidx.room.runtime)
             implementation(libs.androidx.sqlite.bundled)
+            implementation(libs.androidx.room.ktx)
 
             // --- Coil ---
             implementation(libs.coil.compose)

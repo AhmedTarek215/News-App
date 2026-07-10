@@ -49,6 +49,8 @@ class ArticleViewModel(
 
             } catch (e: Exception) {
 
+                e.printStackTrace()
+
                 _state.value = _state.value.copy(
                     isLoading = false,
                     error = e.message
